@@ -1,6 +1,7 @@
 package com.galvanize.playground;
 
 
+import com.galvanize.playground.math.MathController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(PlaygroundApplication.class)
+@WebMvcTest(MathController.class)
 public class PlaygroundApplicationTests {
 	@Autowired
 	private MockMvc mvc;

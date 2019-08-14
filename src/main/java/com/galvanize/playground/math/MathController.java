@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.*;
 public class MathController {
     @PostMapping("/sum")
     public String doSum( @RequestParam MultiValueMap<String, String> queryString){
-        MathService sumDoer = new MathService(queryString);
-        return sumDoer.doSum();
+        MathService sumDoer = new MathService();
+        return sumDoer.doSum(queryString);
     }
     @GetMapping("/calculate")
     public String doMath(@RequestParam(value = "operation", defaultValue = "add") String operation, @RequestParam String x, @RequestParam String y ) {
-        MathService operationDoer = new MathService(operation, x, y);
-        return operationDoer.doOperation();
+        MathService operationDoer = new MathService();
+        return operationDoer.doOperation(operation, x, y);
     }
     @GetMapping("/pi")
     public String MyPi(){
