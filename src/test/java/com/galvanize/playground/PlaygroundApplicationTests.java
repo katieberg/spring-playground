@@ -22,15 +22,28 @@ public class PlaygroundApplicationTests {
 	private MockMvc mvc;
 
 	@Test
-	public void contextLoads() throws Exception {
+	public void testPi() throws Exception {
 		this.mvc.perform(get("/math/pi").accept(MediaType.TEXT_PLAIN))
 				.andExpect(status().isOk())
 				.andExpect(content().string("3.141592653589793"));
 	}
 
-	@Test
-	public void testMathThing() throws Exception {
-		this.mvc.perform(get("/vehicles?year=1987&doors=2"))
-				.andExpect(status().isOk());
-	}
+//	@Test
+//	public void testOperation() throws Exception {
+//		this.mvc.perform(get("/math/calculate?operation=add&x=4&y=6"))
+//				.andExpect(status().isOk())
+//				.andExpect(content().string("4 + 6 = 10"));
+//		this.mvc.perform(get("/math/calculate?operation=multiply&x=4&y=6"))
+//				.andExpect(status().isOk())
+//				.andExpect(content().string("4 * 6 = 24"));
+//		this.mvc.perform(get("/math/calculate?operation=subtract&x=4&y=6"))
+//				.andExpect(status().isOk())
+//				.andExpect(content().string("4 - 6 = -2"));
+//		this.mvc.perform(get("/math/calculate?operation=divide&x=30&y=5"))
+//				.andExpect(status().isOk())
+//				.andExpect(content().string("30 / 5 = 6"));
+//		this.mvc.perform(get("/math/calculate?x=30&y=5"))
+//				.andExpect(status().isOk())
+//				.andExpect(content().string("30 + 5 = 35"));
+//	}
 }
