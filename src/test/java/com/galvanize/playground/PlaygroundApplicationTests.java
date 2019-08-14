@@ -28,4 +28,9 @@ public class PlaygroundApplicationTests {
 				.andExpect(content().string("3.141592653589793"));
 	}
 
+	@Test
+	public void testMathThing() throws Exception {
+		this.mvc.perform(get("/vehicles?year=1987&doors=2"))
+				.andExpect(status().isOk());
+	}
 }
