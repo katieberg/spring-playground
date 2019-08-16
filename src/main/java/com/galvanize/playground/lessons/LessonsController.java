@@ -24,4 +24,18 @@ public class LessonsController {
         return this.repository.save(lesson);
     }
 
+    @GetMapping("/{id}")
+    public Lesson getOne(@PathVariable String id){
+        Long longID = Long.parseLong(id);
+        return this.repository.findById(longID).get();
+    }
+
+    @DeleteMapping("/{id}")
+    public Lesson delete(@PathVariable String id){
+        Long longID = Long.parseLong(id);
+        Lesson toDelete = this.repository.findById(longID).get();
+        this.repository.deleteById(longID);
+        return toDelete;
+    }
+
 }
